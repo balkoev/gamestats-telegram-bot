@@ -1,0 +1,28 @@
+{
+  "name": "gamestats-telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balkoev/gamestats-telegram-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balkoev/gamestats-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/balkoev/gamestats-telegram-bot#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "fetch": "^1.1.0",
+    "giphy-js-sdk-core": "^1.0.6",
+    "telegraf": "^3.32.0",
+    "telegraf-inline-menu": "^3.6.0"
+  }
+}

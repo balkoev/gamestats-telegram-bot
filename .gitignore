@@ -1,0 +1,8 @@
+node_modules/
+sessions/
+.bundle
+.DS_Store
+tmp/
+.idea/
+*.swp
+.env
