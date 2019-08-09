@@ -1,5 +1,5 @@
-const Telegraf = require('telegraf')
-const TelegrafInlineMenu = require('telegraf-inline-menu')
+const Telegraf = require('telegraf');
+const TelegrafInlineMenu = require('telegraf-inline-menu');
 const axios = require('axios');
 require('dotenv').config();
 
@@ -13,7 +13,7 @@ const menu = new TelegrafInlineMenu(ctx => `
 
 👇 Выбери валюту!
 `)
-menu.setCommand('start')
+menu.setCommand('start');
 
 menu.simpleButton('USD', 'a', {
   doFunc: ctx => {
@@ -24,9 +24,8 @@ menu.simpleButton('USD', 'a', {
 Дата - ${resp.data.Date}
 -------------------------------------
     `))
-    .then(console.log(ctx.chat))
   }
-})
+});
 
 menu.simpleButton('EURO', 'b', {
   doFunc: ctx => {
@@ -38,7 +37,7 @@ menu.simpleButton('EURO', 'b', {
 -------------------------------------
     `))
   }
-})
+});
 
 menu.simpleButton('BONUS', 'c', {
   doFunc: ctx => {
@@ -46,32 +45,9 @@ menu.simpleButton('BONUS', 'c', {
     .then((resp) => {
       ctx.reply(resp.data.url)
     })
-    //console.log(ctx.deleteMessage(ctx.chat.id, messageId));
   }
-})
+});
 
-const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.use(menu.init())
-
-//bot.startPolling()
-
-// bot.start((ctx) => ctx.replyWithMarkdown(`
-// ✋ Привет, *${ctx.message.from.first_name}*!
-
-// 💰 Добро пожаловать, я буду держать тебя в курсе курсов валют!
-
-// 👇 Выбери валюту!
-// /USD /EURO
-// `))
-
-// bot.help((ctx) => ctx.reply('Send me a sticker'))
-// bot.on('sticker', (ctx) => ctx.reply('👍'))
-// bot.hears(/.+/, (ctx) => {
-//   console.log(ctx)
-//   ctx.reply('Hey there')
-// })
-// bot.command('usd', (ctx) => ctx.reply('Hello'))
-// bot.command('euro', ({ reply }) => reply('Yo'))
-// bot.command('hipster', Telegraf.reply('λ'))
-
-bot.launch()
+const bot = new Telegraf(process.env.BOT_TOKEN);
+bot.use(menu.init());
+bot.launch();
